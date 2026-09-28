@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app">
+        <h1>📝 ToDo List</h1>
+        <p class="subtitle">Данные хранятся в SQLite</p>
+
+        <form id="addForm" class="add-form">
+            <input id="newTitle" type="text" placeholder="Что нужно сделать?" autocomplete="off" required maxlength="500" />
+            <button type="submit">Добавить</button>
+        </form>
+
+        <div class="toolbar">
+            <input id="search" type="search" placeholder="🔍 Поиск..." />
+            <div class="filters">
+                <button data-filter="all" class="active">Все</button>
+                <button data-filter="active">Активные</button>
+                <button data-filter="completed">Выполненные</button>
+            </div>
+        </div>
+
+        <ul id="todoList" class="todo-list"></ul>
+        <p id="empty" class="empty" hidden>Список пуст 🎉</p>
+
+        <div class="footer">
+            <span id="stats"></span>
+            <button id="clearCompleted" class="clear-btn" hidden>Удалить выполненные</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
